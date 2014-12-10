@@ -1,0 +1,31 @@
+<article class="summer-index-post post row">
+    <div class="small-12 medium-3 large-2 columns datetime">
+        <span class="summer-post-meta">
+            <time datetime="{{ post.date | date(site.date_long) }}">
+                <span class="day">
+                    {{ post.date | date("d") }}
+                </span>
+                <span class="month-year">
+                    {{ post.date | date("M Y") }}
+                </span>
+            </time>
+        </span>
+    </div>
+    <div class="small-12 medium-9 large-10 columns">
+        <header class="summer-post-header">
+            <h3 class="summer-post-title">
+                <a href="{{ site.url }}{{ post.url }}">
+                    {{ post.title }}
+                </a>
+            </h3>
+        </header>
+        <section class="summer-post-excerpt">
+           <p>{{ post.content | striptags | truncate(40) }}</p>
+       </section>
+       
+       <div class="summer-index-post-tags">
+        {% for tag in post.taxonomy.tag %}<span class="post-tag-{{tag}}"><a href="{{ home.url }}/tag:{{ tag }}">{{ tag }}</a></span>{%if not loop.last %} {% endif %}{% endfor %}
+        </div>
+        
+    </div>
+</article>
