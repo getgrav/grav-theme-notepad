@@ -50,14 +50,14 @@
             TagIndent: ".8em",
             MultLineWidth: "85%",
             equationNumbers: {
-             autoNumber: "AMS",
-         },
-         unicode: {
-             fonts: "STIXGeneral,'Arial Unicode MS'" 
-         }
-     },
-     showProcessingMessages: false
- });
+               autoNumber: "AMS",
+           },
+           unicode: {
+               fonts: "STIXGeneral,'Arial Unicode MS'" 
+           }
+       },
+       showProcessingMessages: false
+   });
     </script>
     <!-- Icons -->
     <!-- 16x16 -->
@@ -77,52 +77,35 @@
 </head>
 {% block body %}
     <body class="home-template" itemscope itemtype="http://schema.org/WebPage">
-{% endblock %}
-{% set home = pages.find(config.system.home.alias) %}
-    {% block header %}
-        <header class="summer-site-head">
-            <div class="summer-site-head-menu">
-                <a class="summer-blog-logo" href="{{ base_url_relative }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="Blog Logo" /></a>
-                <div class="summer-blog-menu">      
-                    <div class="summer-mobile-menu show-for-small">
-                        <a href="#"><i class="fa fa-bars"></i></a>
-                    </div>
-                    <ul class="summer-menu">
-                        <li class="summer-mobile-close-btn show-for-small text-right">
-                            <a href="#"><i class="fa fa-times"></i></a>
-                        </li>
-                        {% for link in site.links %}
-                            <li>{% if link.external %}
-                                <a href="{{ link.url }}">{{ link.title }}</a>
-                                {% else %}
-                                <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-                            {% endif %} </li>
-                        {% endfor %}            
-                        <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
-                    </ul>
+    {% endblock %}
+    {% set home = pages.find(config.system.home.alias) %}
+        {% block header %}
+            <header class="summer-site-head">
+                <div class="summer-site-head-menu">
+                    <a class="summer-blog-logo" href="{{ base_url }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="Blog Logo" /></a>
+                    {% include 'partials/navigation.html.twig' %}
+                    <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="summer-site-head-content" >
-                <div class="summer-site-head-bg"></div>
-                <h1 class="summer-blog-title">
-                    <span class="summer-site-head-title-bg">
-                        {{ site.title }}
-                    </span>
-                </h1>
-                <h2 class="summer-blog-description">{{ site.description }}</h2>
-            </div>
-        </header>
-    {% endblock %}
+                <div class="summer-site-head-content" >
+                    <div class="summer-site-head-bg"></div>
+                    <h1 class="summer-blog-title">
+                        <span class="summer-site-head-title-bg">
+                            {{ site.title }}
+                        </span>
+                    </h1>
+                    <h2 class="summer-blog-description">{{ site.description }}</h2>
+                </div>
+            </header>
+        {% endblock %}
 
-    {% block content %}
-        {{ content }}
-    {% endblock %}
+        {% block content %}
+            {{ content }}
+        {% endblock %}
 
-    {% block footer %}
-        {% include 'partials/footer.html.twig' %}
-    {% endblock %}
+        {% block footer %}
+            {% include 'partials/footer.html.twig' %}
+        {% endblock %}
 
-    {% include 'partials/scripts.html.twig' %}
-</body>
-</html>
+        {% include 'partials/scripts.html.twig' %}
+    </body>
+    </html>
