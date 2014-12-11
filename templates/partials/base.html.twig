@@ -35,104 +35,94 @@
     {{ assets.js() }}
 
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script>
-        MathJax.Hub.Config({
-            config: ["MMLorHTML.js"],
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX"],
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                processEscapes: false
-            },
-            TeX: {
-                TagSide: "right",
-                TagIndent: ".8em",
-                MultLineWidth: "85%",
-                equationNumbers: {
-                   autoNumber: "AMS",
-                },
-                unicode: {
-                   fonts: "STIXGeneral,'Arial Unicode MS'" 
-                }
-            },
-            showProcessingMessages: false
-        });
+    <script>
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: false
+        },
+        TeX: {
+            TagSide: "right",
+            TagIndent: ".8em",
+            MultLineWidth: "85%",
+            equationNumbers: {
+             autoNumber: "AMS",
+         },
+         unicode: {
+             fonts: "STIXGeneral,'Arial Unicode MS'" 
+         }
+     },
+     showProcessingMessages: false
+ });
     </script>
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="{{ theme_url }}/images/favicon.ico">
-<!-- 32x32 -->
-<link rel="shortcut icon" href="{{ theme_url }}/images/logo.png">
-<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="{{ theme_url }}/images/apple-touch-icon-precomposed.png">
-<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ theme_url }}/images/apple-touch-icon-72x72-precomposed.png">
-<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ theme_url }}/images/apple-touch-icon-114x114-precomposed.png">
-<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ theme_url }}/images/apple-touch-icon-144x144-precomposed.png">
+    <!-- Icons -->
+    <!-- 16x16 -->
+    <link rel="shortcut icon" href="{{ theme_url }}/images/favicon.ico">
+    <!-- 32x32 -->
+    <link rel="shortcut icon" href="{{ theme_url }}/images/logo.png">
+    <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+    <link rel="apple-touch-icon-precomposed" href="{{ theme_url }}/images/apple-touch-icon-precomposed.png">
+    <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ theme_url }}/images/apple-touch-icon-72x72-precomposed.png">
+    <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ theme_url }}/images/apple-touch-icon-114x114-precomposed.png">
+    <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ theme_url }}/images/apple-touch-icon-144x144-precomposed.png">
 
 
 </head>
 {% block body %}
-<body class="home-template" itemscope itemtype="http://schema.org/WebPage">
+    <body class="home-template" itemscope itemtype="http://schema.org/WebPage">
 {% endblock %}
-
 {% set home = pages.find(config.system.home.alias) %}
+    {% block header %}
+        <header class="summer-site-head">
+            <div class="summer-site-head-menu">
+                <a class="summer-blog-logo" href="{{ base_url_relative }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="Blog Logo" /></a>
+                <div class="summer-blog-menu">      
+                    <div class="summer-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="summer-menu">
+                        <li class="summer-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        {% for link in site.links %}
+                            <li>{% if link.external %}
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                                {% else %}
+                                <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                            {% endif %} </li>
+                        {% endfor %}            
+                        <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="summer-site-head-content" >
+                <div class="summer-site-head-bg"></div>
+                <h1 class="summer-blog-title">
+                    <span class="summer-site-head-title-bg">
+                        {{ site.title }}
+                    </span>
+                </h1>
+                <h2 class="summer-blog-description">{{ site.description }}</h2>
+            </div>
+        </header>
+    {% endblock %}
 
-{% block header %}
-<header class="summer-site-head">
-    <div class="summer-site-head-menu">
-        <a class="summer-blog-logo" href="{{ base_url_relative }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="Blog Logo" /></a>
-        
-        
-        <div class="summer-blog-menu">      
-    <div class="summer-mobile-menu show-for-small">
-        <a href="#"><i class="fa fa-bars"></i></a>
-    </div>
-    <ul class="summer-menu">
-        <li class="summer-mobile-close-btn show-for-small text-right">
-            <a href="#"><i class="fa fa-times"></i></a>
-        </li>
-{% for link in site.links %}
-            <li>{% if link.external %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-            {% else %}
-            <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-            {% endif %} </li>
-{% endfor %}            
-           <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
-    </ul>
-</div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="summer-site-head-content" >
-        <div class="summer-site-head-bg"></div>
-        <h1 class="summer-blog-title">
-            <span class="summer-site-head-title-bg">
-                {{ site.title }}
-            </span>
-        </h1>
-        <h2 class="summer-blog-description">{{ site.description }}</h2>
-    </div>
-</header>
-{% endblock %}
-
-
-
-{% block content %}
+    {% block content %}
         {{ content }}
-{% endblock %}
+    {% endblock %}
 
+    {% block footer %}
+        {% include 'partials/footer.html.twig' %}
+    {% endblock %}
 
-
-{% block footer %}
-    {% include 'partials/footer.html.twig' %}
-{% endblock %}
-
-
-{% include 'partials/scripts.html.twig' %}
-
+    {% include 'partials/scripts.html.twig' %}
 </body>
 </html>
