@@ -24,7 +24,7 @@
 
   <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
 
-  {% if page.header.image %}<img src="{{ page.media[page.header.image].url}}" alt="cover-image" />{% endif %}
+  {% if page.header.image %}<img src="{{ page.media[page.header.image].url}}" style="background-image: url({% if page.header.image %}{{ page.media[page.header.image].url }}{% endif %});" alt="cover-image" />{% endif %}
 
     <article class="summer-post-content post">
       <div>

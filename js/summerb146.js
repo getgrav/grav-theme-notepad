@@ -49,7 +49,7 @@ var summer = (function ($) {
     postHeaderCoverImg = function () {
         var coverImage = $('[alt=cover-image]');
         if (coverImage.length) {
-            $(postCoverImg).append('<img src="' + coverImage.attr('src') + '">');
+            $(postCoverImg).append('<img style="' + coverImage.attr('style') + '">');
             coverImage.remove();
         }
     },
