@@ -39,7 +39,7 @@ html, body, .summer-post-container, .summer-post-header {
   /* -------------------------- */
   /* Delays */ }
 
-    .bg-img img {
+    .post-image-image {
       background-size: cover;
       position: absolute;
       top: 0;
@@ -87,7 +87,7 @@ html, body, .summer-post-container, .summer-post-header {
     right: 0;
     bottom: 0;
     -webkit-backface-visibility: hidden; }
-    .post-template .bg-img img {
+    .post-template .bg-img .post-image-image {
       position: absolute;
       top: 0;
       left: 0;
@@ -277,7 +277,7 @@ html, body, .summer-post-container, .summer-post-header {
     top: 50%;
     position: fixed;
     z-index: 900; }
-  .post-template .intro-effect-sliced .bg-img:last-child img {
+  .post-template .intro-effect-sliced .bg-img:last-child .post-image-image {
     top: -100%; }
   .post-template .intro-effect-sliced.modify .bg-img:first-child {
     -webkit-transform: translateY(-100%);

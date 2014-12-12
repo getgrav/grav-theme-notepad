@@ -7,7 +7,7 @@ var summer = (function ($) {
         mobileMenuCloseButton = '.summer-mobile-close-btn',
         mainMenu = '.summer-menu',
         bgCheckClass = '.bg-check',
-        postBgImages = '.bg-img img',
+        postBgImages = '.bg-img .post-image-image',
         postCoverImg = '.summer-post-header .bg-img',
 
     // post animations on homepage
@@ -49,7 +49,7 @@ var summer = (function ($) {
     postHeaderCoverImg = function () {
         var coverImage = $('[alt=cover-image]');
         if (coverImage.length) {
-            $(postCoverImg).append('<img style="' + coverImage.attr('style') + '">');
+            $(postCoverImg).append('<div class="post-image-image" style="' + coverImage.attr('style') + '"></div>');
             coverImage.remove();
         }
     },
