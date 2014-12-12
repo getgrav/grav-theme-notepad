@@ -1,6 +1,6 @@
 # Notepad Grav Theme
 
-The Notepad theme for Grav is a direct port of the [Notepad Theme for Grav](https://github.com/dirkfabisch/notepad) designed by [Dirk Fabisch](http://blog.base68.com/about/) which in turn was inspired by the [Readium 2.0 Theme for Ghost](http://www.svenread.com/readium-ghost-theme/).
+The Notepad theme for Grav is a direct port of the [Notepad Theme for Grav](http://hmfaysal.github.io/Notepad/) designed by [HOSSAIN MOHD FAYSAL](http://hmfaysal.github.io/Notepad/about/).
 
 ## Installation / Configuration
 
