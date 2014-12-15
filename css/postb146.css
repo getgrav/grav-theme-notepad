@@ -47,7 +47,6 @@ html, body, .summer-post-container, .summer-post-header {
       right: 0;
       bottom: 0;
       text-indent: -9999px;
-      padding-top: 100%;
       z-index: 1;
     }
 
