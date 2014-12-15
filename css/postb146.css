@@ -10,6 +10,19 @@
 html, body, .summer-post-container, .summer-post-header {
   height: 100%; }
 
+  .post-image {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-indent: -9999px;
+    z-index: 1;
+  }
+
+
+
 .summer-post-header-title {
   display: inline-block;
   padding: 0;
@@ -38,18 +51,6 @@ html, body, .summer-post-container, .summer-post-header {
   /* based on http://tympanus.net/Development/ArticleIntroEffects/index3.html
   /* -------------------------- */
   /* Delays */ }
-
-    .post-image-image {
-      background-size: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      text-indent: -9999px;
-      z-index: 1;
-    }
-
   .post-template .summer-blog-menu .summer-mobile-menu a {
     color: white; }
     .post-template .summer-blog-menu .summer-mobile-menu a:hover {
@@ -86,7 +87,7 @@ html, body, .summer-post-container, .summer-post-header {
     right: 0;
     bottom: 0;
     -webkit-backface-visibility: hidden; }
-    .post-template .bg-img .post-image-image {
+    .post-template .bg-img .post-image {
       position: absolute;
       top: 0;
       left: 0;
@@ -194,9 +195,7 @@ html, body, .summer-post-container, .summer-post-header {
     -moz-osx-font-smoothing: grayscale; }
   .post-template .summer-post-content {
     margin: 0 auto;
-    padding: 0;
-    margin-bottom: 100px;
-     }
+    padding: 0; }
     .post-template .summer-post-content > div:not(.summer-post-title) {
       margin: -25% auto 0;
       padding-left: 1.875rem;
@@ -276,7 +275,7 @@ html, body, .summer-post-container, .summer-post-header {
     top: 50%;
     position: fixed;
     z-index: 900; }
-  .post-template .intro-effect-sliced .bg-img:last-child .post-image-image {
+  .post-template .intro-effect-sliced .bg-img:last-child .post-image  {
     top: -100%; }
   .post-template .intro-effect-sliced.modify .bg-img:first-child {
     -webkit-transform: translateY(-100%);
