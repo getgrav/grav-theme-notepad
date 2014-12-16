@@ -7,7 +7,7 @@ var summer = (function ($) {
         mobileMenuCloseButton = '.summer-mobile-close-btn',
         mainMenu = '.summer-menu',
         bgCheckClass = '.bg-check',
-        postBgImages = '.bg-img .post-image',
+        postBgImages = '.bg-img img',
         postCoverImg = '.summer-post-header .bg-img',
 
     // post animations on homepage
@@ -49,7 +49,7 @@ var summer = (function ($) {
     postHeaderCoverImg = function () {
         var coverImage = $('[alt=cover-image]');
         if (coverImage.length) {
-            $(postCoverImg).append('<div class="post-image" style="' + coverImage.attr('style') + '"></div>');
+            $(postCoverImg).append('<img src="' + coverImage.attr('src') + '">');
             coverImage.remove();
         }
     },
@@ -63,7 +63,7 @@ var summer = (function ($) {
         postHeaderCoverImg();
         mobileMenu();
         headerTitlesBackgroundCheck();
-        $('p:has(> div)').addClass('with-image');
+        $('p:has(> img)').addClass('with-image');
     };
 
     return {

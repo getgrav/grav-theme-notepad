@@ -10,19 +10,6 @@
 html, body, .summer-post-container, .summer-post-header {
   height: 100%; }
 
-  .post-image {
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-indent: -9999px;
-    z-index: 1;
-  }
-
-
-
 .summer-post-header-title {
   display: inline-block;
   padding: 0;
@@ -87,7 +74,7 @@ html, body, .summer-post-container, .summer-post-header {
     right: 0;
     bottom: 0;
     -webkit-backface-visibility: hidden; }
-    .post-template .bg-img .post-image {
+    .post-template .bg-img img {
       position: absolute;
       top: 0;
       left: 0;
@@ -275,7 +262,7 @@ html, body, .summer-post-container, .summer-post-header {
     top: 50%;
     position: fixed;
     z-index: 900; }
-  .post-template .intro-effect-sliced .bg-img:last-child .post-image  {
+  .post-template .intro-effect-sliced .bg-img:last-child img {
     top: -100%; }
   .post-template .intro-effect-sliced.modify .bg-img:first-child {
     -webkit-transform: translateY(-100%);
