@@ -1,0 +1,43 @@
+{% embed 'partials/base.html.twig' %}
+
+{% block body %}
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+ <main id="summer-post-container" class="summer-post-container intro-effect-sliced" role="main">
+  <header class="summer-post-header">
+    <div class="bg-img"></div>
+    <div class="summer-post-menu-header">
+      <a class="summer-blog-logo" href="{{ base_url }}">
+        <img src="{{ base_url }}{{ site.logo }}" alt="Blog Logo" />
+      </a>
+      {% include 'partials/navigation.html.twig' %}
+    </div>
+    <div class="summer-post-title bg-check">
+      <h1>{{ page.title }}</h1>
+      <p>by <strong>{{ site.owner.name }}</strong> &#8212; on {% for tag in page.taxonomy.tag %}<a href="{{ site.url }}/tags/index.html#{{ tag }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{%if not loop.last %}&nbsp;&comma;&nbsp;{% endif %}{% endfor %} <strong><time datetime="{{ page.date | date(site.date_long) }}">{{ post.date | date("d M Y") }}</time></strong></p>
+    </div>
+    <div class="bg-img"></div>
+  </header>
+
+  <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
+
+  {% if page.header.image %}<img src="{{ page.media[page.header.image].url }}" alt="cover-image" />{% endif %}
+
+    <article class="summer-post-content post">
+      <div>
+        {{ content }}
+      </div>
+    </article>
+    <div class="cf"></div>
+    <br />
+
+    {% include 'partials/footer.html.twig' %}
+    <div class="cf"></div>
+  </main> 
+{% endblock %}
+
+{% block footer %}{% endblock %}
+{% endembed %}

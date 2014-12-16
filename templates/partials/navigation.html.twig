@@ -1,0 +1,20 @@
+<div class="summer-blog-menu">      
+    <div class="summer-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="summer-menu">
+        <li class="summer-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+        <li><a href="{{ base_url_relative }}">Home</a></li>
+        {% for link in site.links %}
+            {% if link.url | contains('http') %}
+                {% set domain = '' %}
+                    {% else %}
+                    {% set domain = base_url_absolute %}
+                    {% endif %}
+                    <li><a href="{{ domain }}{{ link.url }}" {% if link.url | contains('http') %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+        {% endfor %}
+        <li><a href="{{ base_url }}/blog.rss" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
+</div>

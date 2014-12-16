@@ -1,0 +1,32 @@
+{% embed 'partials/base.html.twig' %}
+{% block body %}
+<body class="post-template page" itemscope itemtype="http://schema.org/WebPage">
+{% endblock %}
+{% block header %}{% endblock %}
+            
+{% block content %}
+    <main id="summer-page-container" class="summer-page-container" role="main">
+        <header class="summer-page-header">
+            <div class="summer-page-menu-header">
+                <a class="summer-blog-logo" href="{{ base_url }}">
+                    <img src="{{ base_url }}{{ site.logo }}" alt="Blog Logo" /></a>
+                </a>
+
+                {% include 'partials/navigation.html.twig' %}
+            </div>
+            <div class="summer-page-title row">
+                <div class="small-12 columns">
+                    <h1>{{ page.title }}</h1>
+                </div>
+            </div>
+        </header>
+        <article class="summer-page-content">
+            <div>{{ content }}</div>
+        </article>
+        <div class="cf"></div>
+        {% include 'partials/footer.html.twig' %}
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+{% endembed %}
