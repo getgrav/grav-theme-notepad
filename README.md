@@ -1,5 +1,7 @@
 # Notepad Grav Theme
 
+![Notepad](assets/readme_1.png)
+
 The Notepad theme for Grav is a direct port of the [Notepad Theme for Grav](http://hmfaysal.github.io/Notepad/) designed by [HOSSAIN MOHD FAYSAL](http://hmfaysal.github.io/Notepad/about/).
 
 ## Skeleton
