@@ -6,7 +6,7 @@
         <li class="summer-mobile-close-btn show-for-small text-right">
             <a href="#"><i class="fa fa-times"></i></a>
         </li>
-        <li><a href="{{ base_url_relative }}">Home</a></li>
+        <li><a href="{{ base_url_absolute }}">Home</a></li>
         {% for link in site.links %}
             {% if link.url | contains('http') %}
                 {% set domain = '' %}
