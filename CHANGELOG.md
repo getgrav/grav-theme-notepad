@@ -1,0 +1,14 @@
+# v1.0.3
+## 02/19/2015
+
+2. [](#improved)
+	* Updated README
+    * Implemented new `param_sep` variable from Grav 0.9.18
+3. [](#bugfix)
+    * Fix home reference URL  
+
+# v1.0.2
+## 12/16/2014
+
+1. [](#new)
+    * ChangeLog started...
