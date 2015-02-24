@@ -1,8 +1,36 @@
-    {% do assets.addJs('theme://js/public/jqueryb146.js') %}
-    {% do assets.addJs('theme://js/vendor/fastclickb146.js') %}
-    {% do assets.addJs('theme://js/vendor/foundation.minb146.js') %}
-    {% do assets.addJs('theme://js/vendor/background-checkb146.js') %}
-    {% do assets.addJs('theme://js/vendor/post-header-animationsb146.js') %}
-    {% do assets.addJs('theme://js/summerb146.js') %}
+{% do assets.add('jquery', 101) %}
+{% do assets.addJs('theme://js/vendor/fastclickb146.js') %}
+{% do assets.addJs('theme://js/vendor/foundation.minb146.js') %}
+{% do assets.addJs('theme://js/vendor/background-checkb146.js') %}
+{% do assets.addJs('theme://js/vendor/post-header-animationsb146.js') %}
+{% do assets.addJs('theme://js/summerb146.js') %}
 
-    {{ assets.js() }}
+{{ assets.js() }}
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Config({
+    config: ["MMLorHTML.js"],
+    extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: false
+    },
+    TeX: {
+        TagSide: "right",
+        TagIndent: ".8em",
+        MultLineWidth: "85%",
+        equationNumbers: {
+           autoNumber: "AMS",
+       },
+       unicode: {
+           fonts: "STIXGeneral,'Arial Unicode MS'" 
+       }
+   },
+   showProcessingMessages: false
+});
+</script>
+
+
