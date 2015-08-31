@@ -24,7 +24,7 @@
        </section>
        
        <div class="summer-index-post-tags">
-        {% for tag in post.taxonomy.tag %}<span class="post-tag-{{tag}}"><a href="{{ home.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></span>{%if not loop.last %} {% endif %}{% endfor %}
+        {% for tag in post.taxonomy.tag %}<span class="post-tag-{{tag}}"><a href="{{ site.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></span>{%if not loop.last %} {% endif %}{% endfor %}
         </div>
         
     </div>
