@@ -1,3 +1,10 @@
+# v1.1.1
+## 08/31/2015
+
+1. [](#bugfix)
+	* Fixed 404 when clicking on tag while viewing post
+    * Fix not using date in post header
+
 # v1.1.0
 ## 08/25/2015
 
