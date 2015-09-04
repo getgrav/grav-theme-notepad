@@ -15,6 +15,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif; }
 
+header, main, footer {
+  position: relative;
+  z-index: 1; }
+main, .notepad-share-icons, .notepad-disqus {
+    background: white;
+}
+
+.imagepadding {
+  padding: 15px;
+} 
+.imagepadding_left {
+  padding-left: 15px;
+} 
+.imagepadding_right {
+  padding-right: 15px;
+}
+.imagepadding_top {
+  padding-top: 15px;
+} 
+.imagepadding_bottom {
+  padding-bottom: 15px;
+} 
+
 .summer-blog-menu {
   padding-top: 0;
   padding-bottom: 0;
@@ -23,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 2.625rem;
-  height: 5rem; }
+  height: 10rem; }
   .summer-blog-menu .summer-mobile-menu a {
     display: inline-block;
     outline: none;
