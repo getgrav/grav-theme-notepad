@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
 <head>
     <meta charset="utf-8">
     <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
@@ -54,7 +54,7 @@
         {% block header %}
             <header class="summer-site-head">
                 <div class="summer-site-head-menu">
-                    <a class="summer-blog-logo" href="{{ base_url_absolute }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="Blog Logo" /></a>
+                    <a class="summer-blog-logo" href="{{ base_url == '' ? '/' : base_url }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="Blog Logo" /></a>
                     {% include 'partials/navigation.html.twig' %}
                     <div class="clearfix"></div>
                 </div>
