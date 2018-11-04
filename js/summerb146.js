@@ -39,9 +39,18 @@ var summer = (function ($) {
 
     headerTitlesBackgroundCheck = function () {
         if ($(bgCheckClass).length && $(postBgImages).length) {
-            BackgroundCheck.init({
-                targets: bgCheckClass,
-                images: postBgImages
+            var images = $(postBgImages);
+            var counter = 0;
+            images.each(function() {
+                $(this).load(function() {
+                    counter++;
+                    if (counter === images.length) {
+                        BackgroundCheck.init({
+                            targets: bgCheckClass,
+                            images: postBgImages
+                        });
+                    }
+                })
             });
         }
     },
