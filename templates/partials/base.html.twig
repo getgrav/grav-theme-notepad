@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
     <meta charset="utf-8">
     <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
@@ -8,30 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}" />
+    {% include 'partials/metadata.html.twig' %}
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    {% for meta in page.metadata %}
-        <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
-    {% endfor %}
-
     <link rel="canonical" href="{{ page.url() }}">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin,latin-ext' rel='stylesheet'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600&amp;subset=latin,latin-ext' rel='stylesheet'>
-
-    {% do assets.addCss('theme://css/font-awesome.min.css') %}
-    {% do assets.addCss('theme://css/vendor/normalizeb146.css') %}
-    {% do assets.addCss('theme://css/vendor/foundation.minb146.css') %}
-    {% do assets.addCss('theme://css/styleb146.css') %}
-    {% do assets.addCss('theme://css/postb146.css') %}
-    {% do assets.addJs('theme://js/vendor/modernizrb146.js') %}
-
-
-    {{ assets.css() }}
 
     <!-- Icons -->
     <!-- 16x16 -->
@@ -46,7 +32,23 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ theme_url }}/images/apple-touch-icon-114x114-precomposed.png">
     <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ theme_url }}/images/apple-touch-icon-144x144-precomposed.png">
-</head>
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/font-awesome.min.css') %}
+        {% do assets.addCss('theme://css/vendor/normalizeb146.css') %}
+        {% do assets.addCss('theme://css/vendor/foundation.minb146.css') %}
+        {% do assets.addCss('theme://css/styleb146.css') %}
+        {% do assets.addCss('theme://css/postb146.css') %}
+    {% endblock %}
+
+    {% block javascripts %}
+        {% do assets.addJs('theme://js/vendor/modernizrb146.js') %}
+    {% endblock %}
+
+    {% block assets deferred %}
+        {{ assets.css()|raw }}
+    {% endblock %}
+ </head>
 {% block body %}
     <body class="home-template" itemscope itemtype="http://schema.org/WebPage">
     {% endblock %}
@@ -79,5 +81,10 @@
         {% endblock %}
 
         {% include 'partials/scripts.html.twig' %}
+
+        {% block bottom %}
+            {{ assets.js()|raw }}
+            {{ assets.js('bottom')|raw }}
+        {% endblock %}
     </body>
     </html>
