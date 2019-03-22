@@ -1,5 +1,5 @@
 name: Notepad
-version: 1.3.0
+version: 1.4.0
 description: "Notepad theme by HOSSAIN MOHD FAYSAL ported to **Grav**"
 icon: pencil-square
 author:
@@ -11,6 +11,8 @@ demo: http://demo.getgrav.org/notepad-skeleton
 keywords: notepad, theme, modern, fast, responsive, blog
 bugs: https://github.com/getgrav/grav-theme-notepad/issues
 license: MIT
+dependencies:
+  - { name: grav, version: '>=1.5.10' }
 
 form:
   validation: loose
