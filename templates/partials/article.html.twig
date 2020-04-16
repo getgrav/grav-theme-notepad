@@ -20,7 +20,7 @@
             {% endif %}
         </header>
         <section class="summer-post-excerpt">
-           <p>{{ post.content | striptags | truncate(40) }}</p>
+           <p>{{ post.content | striptags | truncate(grav.theme.config.excerpt_length) }}</p>
        </section>
        
        <div class="summer-index-post-tags">
