@@ -56,7 +56,7 @@
         {% block header %}
             <header class="summer-site-head">
                 <div class="summer-site-head-menu">
-                    <a class="summer-blog-logo" href="{{ base_url == '' ? '/' : base_url }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="Blog Logo" /></a>
+                    <a class="summer-blog-logo" href="{{ base_url == '' ? '/' : base_url }}"><img src="{{ base_url_relative }}{{ site.logo }}" alt="{{ site.title }}" /></a>
                     {% include 'partials/navigation.html.twig' %}
                     <div class="clearfix"></div>
                 </div>
