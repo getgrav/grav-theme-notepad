@@ -47,9 +47,9 @@ var summer = (function ($) {
     },
 
     postHeaderCoverImg = function () {
-        var coverImage = $('[alt=cover-image]');
+        var coverImage = $('#cover-image');
         if (coverImage.length) {
-            $(postCoverImg).append('<img src="' + coverImage.attr('src') + '">');
+            $(postCoverImg).append('<img src="' + coverImage.attr('src') + '" alt="' + coverImage.attr('alt') + '">');
             coverImage.remove();
         }
     },
