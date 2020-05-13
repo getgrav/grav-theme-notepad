@@ -5,9 +5,9 @@ icon: pencil-square
 author:
   name: Team Grav
   email: devs@getgrav.org
-  url: http://getgrav.org
+  url: https://getgrav.org
 homepage: https://github.com/getgrav/grav-theme-notepad
-demo: http://demo.getgrav.org/notepad-skeleton
+demo: https://demo.getgrav.org/notepad-skeleton
 keywords: notepad, theme, modern, fast, responsive, blog
 bugs: https://github.com/getgrav/grav-theme-notepad/issues
 license: MIT
