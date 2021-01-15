@@ -1,3 +1,10 @@
+# v1.4.1
+## 01/15/2021
+
+1. [](#improved)
+    * Fixed autoescaping in preparation for Grav 1.7
+    * Upgraded all links to use `HTTPS`
+
 # v1.4.0
 ## 03/21/2019
 

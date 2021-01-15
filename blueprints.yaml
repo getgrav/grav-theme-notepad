@@ -1,4 +1,6 @@
 name: Notepad
+slug: notepad
+type: theme
 version: 1.4.0
 description: "Notepad theme by HOSSAIN MOHD FAYSAL ported to **Grav**"
 icon: pencil-square
