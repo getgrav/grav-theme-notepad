@@ -1,9 +1,9 @@
 {% embed 'partials/base.html.twig' %}
 {% block body %}
-<body class="post-template page" itemscope itemtype="http://schema.org/WebPage">
+<body class="post-template page" itemscope itemtype="https://schema.org/WebPage">
 {% endblock %}
 {% block header %}{% endblock %}
-            
+
 {% block content %}
     <main id="summer-page-container" class="summer-page-container" role="main">
         <header class="summer-page-header">
@@ -21,7 +21,7 @@
             </div>
         </header>
         <article class="summer-page-content">
-            <div>{{ content }}</div>
+            <div>{{ content|raw }}</div>
         </article>
         <div class="cf"></div>
         {% include 'partials/footer.html.twig' %}

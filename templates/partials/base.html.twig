@@ -2,7 +2,7 @@
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
     <meta charset="utf-8">
-    <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+    <!-- (1) Optimize for mobile versions: https://goo.gl/EOpFl -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link rel="canonical" href="{{ page.url() }}">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin,latin-ext' rel='stylesheet'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600&amp;subset=latin,latin-ext' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin,latin-ext' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600&amp;subset=latin,latin-ext' rel='stylesheet'>
 
     <!-- Icons -->
     <!-- 16x16 -->
@@ -50,7 +50,7 @@
     {% endblock %}
  </head>
 {% block body %}
-    <body class="home-template" itemscope itemtype="http://schema.org/WebPage">
+    <body class="home-template" itemscope itemtype="https://schema.org/WebPage">
     {% endblock %}
     {% set home = pages.find(config.system.home.alias) %}
         {% block header %}
@@ -73,7 +73,7 @@
         {% endblock %}
 
         {% block content %}
-            {{ content }}
+            {{ content|raw }}
         {% endblock %}
 
         {% block footer %}

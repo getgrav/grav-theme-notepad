@@ -1,7 +1,7 @@
 {% embed 'partials/base.html.twig' %}
 
 {% block body %}
-<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
 {% endblock %}
 {% block header %}{% endblock %}
 
@@ -28,7 +28,7 @@
 
     <article class="summer-post-content post">
       <div>
-        {{ content }}
+        {{ content|raw }}
       </div>
     </article>
     <div class="cf"></div>
