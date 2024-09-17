@@ -38,10 +38,12 @@
         }
 
         function keydown(e) {
-            for (var i = keys.length; i--;) {
-                if (e.keyCode === keys[i]) {
-                    preventDefault(e);
-                    return;
+            if (window.scrollTop > 5) {
+                for (var i = keys.length; i--;) {
+                    if (e.keyCode === keys[i]) {
+                        preventDefault(e);
+                        return;
+                    }
                 }
             }
         }
