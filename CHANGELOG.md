@@ -1,3 +1,10 @@
+# v1.4.2
+## 10/24/2026
+
+1. [](#bugfix)
+    * Updated the theme's JavaScript to work with jQuery 3, which current Grav versions load
+    * Fixed a script error on every page caused by the retired MathJax CDN
+
 # v1.4.1
 ## 01/15/2021
 
